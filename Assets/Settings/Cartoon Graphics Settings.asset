@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80b2f89227a790c42abe2c8d89115043, type: 3}
+  m_Name: Cartoon Graphics Settings
+  m_EditorClassIdentifier: 
+  outlineColor: {r: 0.14150941, g: 0.09975508, b: 0.066082224, a: 0.972549}
+  outlineWidth: 0.005
+  outlineIntensity: 1000
+  outlineFade: 2
+  cellsAmount: 3
+  cellFade: 0.3
+  specularColor: {r: 1, g: 0.97112316, b: 0.740566, a: 1}
+  shadowStart: -1
+  shadowEnd: 1
+  shadowColor: {r: 0.16981131, g: 0.15947846, b: 0.13536845, a: 1}

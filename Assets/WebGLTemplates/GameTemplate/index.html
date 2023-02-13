@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{PRODUCT_NAME}</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+</head>
+
+<body>
+    <canvas id="game-canvas"></canvas>
+    <div id="loading" class="loading">
+        <div id="loading-bar" class="loading-bar-field">
+            <div id="loading-progress" class="loading-bar-fill"></div>
+        </div>
+    </div>
+    <script>
+
+        isMobile = () => {
+            return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        }
+
+        const maxPixelRatioMobile = 0.75;
+        const maxPixelRatioDesktop = 2;
+
+        var pixelRatio = isMobile ? maxPixelRatioMobile : maxPixelRatioDesktop;
+
+        var gameScreen = document.querySelector("#game-canvas");
+        var loadingScreen = document.querySelector("#loading");
+
+        var progressBar = document.querySelector("#loading-progress");
+
+        loadingScreen.style.display = "flex";
+        gameScreen.style.display = "none";
+
+        var buildUrl = "Build";
+        var loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
+        var script = document.createElement("script");
+        script.src = loaderUrl;
+
+        var buildUrl = "Build";
+        var config = {
+            dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
+            frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
+            codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "{{{ COMPANY_NAME }}}",
+            productName: "{{{ PRODUCT_NAME }}}",
+            productVersion: "{{{ PRODUCT_VERSION }}}",
+            devicePixelRatio: pixelRatio,
+        };
+
+        script.onload = () => {
+            createUnityInstance(gameScreen, config, (progress) => {
+
+                progressBar.style.width = (progress * 100) + "%";
+            })
+                .then((instance) => {
+                    gameScreen.style.display = "block";
+                    loadingScreen.style.display = "none";
+                })
+                .catch((error) => {
+                    alert(error)
+                });
+        };
+        document.body.appendChild(script);
+    </script>
+</body>
+
+</html>
