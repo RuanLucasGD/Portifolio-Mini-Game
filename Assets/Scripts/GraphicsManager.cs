@@ -7,8 +7,6 @@ public class GraphicsManager : MonoBehaviour
 {
     public CartoonShaderManager graphicsSettings;
 
-
-
     private void Awake()
     {
         if (!graphicsSettings)
@@ -24,7 +22,6 @@ public class GraphicsManager : MonoBehaviour
 
         SetEnablePostProcessing(!_isMobile);
     }
-
     public void SetEnablePostProcessing(bool enabled)
     {
         if (!Camera.main)

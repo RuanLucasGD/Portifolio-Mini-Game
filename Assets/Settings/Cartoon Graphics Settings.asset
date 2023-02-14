@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cartoon Graphics Settings
   m_EditorClassIdentifier: 
   outlineColor: {r: 0.14150941, g: 0.09975508, b: 0.066082224, a: 0.972549}
-  outlineWidth: 0.005
+  outlineWidth: 0.0005
   outlineIntensity: 1000
   outlineFade: 2
   cellsAmount: 3

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>{PRODUCT_NAME}</title>
@@ -16,12 +17,23 @@
     </div>
     <script>
 
+        var canSetFullScreen = false;
+
         isMobile = () => {
             return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         }
 
-        const maxPixelRatioMobile = 0.75;
-        const maxPixelRatioDesktop = 2;
+        SetFullScreen = (unityInstance) => {
+
+            if (!canSetFullScreen || document.fullscreenElement || !document.fullscreenEnabled) {
+                return;
+            }
+
+            unityInstance.SetFullscreen(1);
+        }
+
+        const maxPixelRatioMobile = 1;
+        const maxPixelRatioDesktop = 4;
 
         var pixelRatio = isMobile ? maxPixelRatioMobile : maxPixelRatioDesktop;
 
@@ -58,6 +70,15 @@
                 .then((instance) => {
                     gameScreen.style.display = "block";
                     loadingScreen.style.display = "none";
+
+                    document.addEventListener("click", () => {
+                        SetFullScreen(instance);
+                        canSetFullScreen = true;
+                    });
+                    document.addEventListener("touchstart", () => {
+                        SetFullScreen(instance);
+                        canSetFullScreen = true;
+                    });
                 })
                 .catch((error) => {
                     alert(error)
