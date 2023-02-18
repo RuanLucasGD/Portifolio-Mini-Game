@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tank Wheels
   m_EditorClassIdentifier: 
   wheelRadius: 0.3
-  springLength: 0.3
+  springLength: 0.4
   springHeight: 0.2
   springStiffness: 15000
   springForceByCompression:
@@ -22,38 +22,29 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 0.024433138
+      outSlope: 0.024433138
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.27966103
     - serializedVersion: 3
-      time: 0.4
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      time: 0.67532456
+      value: 0.83455485
+      inSlope: -0.95457655
+      outSlope: -0.95457655
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.7
-      value: 0.2
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 0.2
-      inSlope: 0
-      outSlope: 0
+      value: 0.2942407
+      inSlope: 0.24539007
+      outSlope: 0.24539007
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.3467338
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -72,8 +63,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.48348466
-      value: 0.034075916
+      time: 0.5268516
+      value: 0.17407712
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -82,7 +73,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0.034075916
+      value: 0.17407712
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -93,7 +84,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   forwardFriction: 0.2
-  sideFriction: 1
+  sideFriction: 2
   multiplyFriction: 1
   steerByVelocityCurve:
     serializedVersion: 2
@@ -108,7 +99,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.065818034
+      time: 0.1
       value: 1
       inSlope: 0
       outSlope: 0
@@ -117,8 +108,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.22749418
-      value: 0.34666982
+      time: 0.5
+      value: 0.3
       inSlope: -1
       outSlope: -1
       tangentMode: 0
@@ -127,7 +118,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0.12379285
+      value: 0.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -137,7 +128,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  maxDownForce: 120000
+  maxDownForce: 30000
   downForceCurve:
     serializedVersion: 2
     m_Curve:

@@ -1,0 +1,17 @@
+{
+    "name": "Game.Graphics",
+    "rootNamespace": "",
+    "references": [
+        "GUID:17c8a6222757449488e97e41c40f2bc4",
+        "GUID:15fc0a57446b3144c949da3e2b9737a9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

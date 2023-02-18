@@ -1,0 +1,16 @@
+{
+    "name": "Game.Mecanics",
+    "rootNamespace": "",
+    "references": [
+        "GUID:244c241921a7319408de68cec4a23af3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

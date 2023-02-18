@@ -98,13 +98,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  maxForwardVelocity: 80
+  maxForwardVelocity: 60
   maxReverseVelocity: 40
   maxBrakeForce: 2000
   forwardGears:
   - 20
   - 40
   - 60
-  - 80
   reverseGears:
+  - 20
   - 40
