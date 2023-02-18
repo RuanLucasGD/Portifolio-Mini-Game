@@ -19,12 +19,13 @@ public class CameraController : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.LookAt(target.position);
+
     }
 
     void Update()
     {
         var _cameraDirection = direction * DistanceByScreenSize;
         transform.position = target.position + _cameraDirection;
+        transform.LookAt(target.position);
     }
 }
