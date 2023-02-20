@@ -2766,6 +2766,7 @@ GameObject:
   - component: {fileID: 3804075634027799084}
   - component: {fileID: 6477661004571858550}
   - component: {fileID: 4590722138874540621}
+  - component: {fileID: 1897227055671125496}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -2837,6 +2838,99 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1897227055671125496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8486020632465080846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b40cee5d20495645af258d2a76a4819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon:
+    enabled: 0
+    spawner: {fileID: 0}
+    projectile: {fileID: 0}
+    projectileLifeTime: 10
+    shotInterval: 0.2
+    reloadTime: 2
+    ammunationBySlot: 60
+    ammunationSlots: 2
+    infinityAmmunation: 0
+    onStartReload:
+      m_PersistentCalls:
+        m_Calls: []
+    onReloaded:
+      m_PersistentCalls:
+        m_Calls: []
+    onShot:
+      m_PersistentCalls:
+        m_Calls: []
+    onProjectileHit:
+      m_PersistentCalls:
+        m_Calls: []
+    shootAudioSource: {fileID: 0}
+    shootAudioClip: {fileID: 0}
+    shotEffects: []
+  rotation:
+    turnWeaponEnabled: 1
+    horizontalTransform: {fileID: 3804075634027799084}
+    verticalTransform: {fileID: 3030707071979589051}
+    turnSpeedVertical: 100
+    turnSpeedHorizontal: 100
+    minVerticalAngle: 7
+    maxVerticalAngle: 45
+    maxHorizontalAngle: 180
+  recoil:
+    recoilForce: 500
+    vehicle: {fileID: 0}
+    animationLength: 1
+    animation:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.4
+        value: 0.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    recoilTransform: {fileID: 0}
 --- !u!1 &8534387906584404101
 GameObject:
   m_ObjectHideFlags: 0

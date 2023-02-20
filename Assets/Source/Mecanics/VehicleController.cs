@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game
+namespace Game.Mecanics
 {
     public class VehicleController : MonoBehaviour
     {
