@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tank Wheels
   m_EditorClassIdentifier: 
   wheelRadius: 0.3
-  springLength: 0.4
+  springLength: 0.3
   springHeight: 0.2
   springStiffness: 15000
   springForceByCompression:

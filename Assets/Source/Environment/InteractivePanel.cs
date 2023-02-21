@@ -102,7 +102,7 @@ namespace Game
 
         private void OnPlayerSelectPanel(GameObject selectedPanel)
         {
-            isSelected = selectedPanel.gameObject == gameObject;
+            isSelected = selectedPanel == gameObject;
 
             if (playerTurretController && !playerTurretController.IsOnInteractiveArea)
             {

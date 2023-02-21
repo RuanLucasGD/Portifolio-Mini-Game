@@ -42,7 +42,7 @@ namespace Game.Mecanics
                 return;
             }
 
-            if (IsOnInteractiveArea)
+            if (IsOnInteractiveArea && inViewPanels.Length > 0)
             {
                 TurretLookAtPanels();
             }
@@ -141,11 +141,15 @@ namespace Game.Mecanics
         private void OnEnter(Collider other)
         {
             IsOnInteractiveArea = true;
+            UpdateInViewPanelsList();
+            UpdateFindPanelOnScreenCenter();
+            onSelectPanel.Invoke(nearPanel);
         }
 
         private void OnExit(Collider other)
         {
             IsOnInteractiveArea = false;
+            onSelectPanel.Invoke(null);
         }
     }
 }
