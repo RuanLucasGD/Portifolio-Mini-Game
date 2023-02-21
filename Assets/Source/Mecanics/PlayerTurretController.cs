@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Game.Mecanics
 {
@@ -10,6 +11,9 @@ namespace Game.Mecanics
         public string panelsTag;
         public InteractiveTrigger interactiveTrigger;
         public MMV.MMV_ShooterManager vehicleWeapon;
+
+        [Space]
+        public UnityEvent<GameObject> onSelectPanel;
 
         private const float GET_IN_VIEW_PANELS_INTERVAL = 1f;
         private const float GET_NEAR_PANELS_INTERVAL = 0.5f;
@@ -28,7 +32,7 @@ namespace Game.Mecanics
             inViewPanels = new GameObject[] { };
 
             InvokeRepeating(nameof(UpdateInViewPanelsList), GET_IN_VIEW_PANELS_INTERVAL, GET_IN_VIEW_PANELS_INTERVAL);
-            InvokeRepeating(nameof(UpdateFindNearPanel), GET_NEAR_PANELS_INTERVAL, GET_NEAR_PANELS_INTERVAL);
+            InvokeRepeating(nameof(UpdateFindPanelOnScreenCenter), GET_NEAR_PANELS_INTERVAL, GET_NEAR_PANELS_INTERVAL);
         }
 
         void Update()
@@ -84,7 +88,7 @@ namespace Game.Mecanics
             inViewPanels = _inView.ToArray();
         }
 
-        private void UpdateFindNearPanel()
+        private void UpdateFindPanelOnScreenCenter()
         {
             if (inViewPanels.Length == 0)
             {
@@ -92,19 +96,26 @@ namespace Game.Mecanics
             }
 
             var _near = inViewPanels[0];
-            var _distance = Vector3.Distance(transform.position, _near.transform.position);
+            var _camera = Camera.main.transform;
+            var _minorAngle = Vector3.Angle(_camera.forward, (_near.transform.position - _camera.position).normalized);
 
             foreach (var p in inViewPanels)
             {
-                var _newDistance = Vector3.Distance(transform.position, p.transform.position);
-                if (_newDistance < _distance)
+                // angle to camera direction
+                var _panelAngle = Vector3.Angle(_camera.forward, (p.transform.position - _camera.position).normalized);
+
+                if (_panelAngle < _minorAngle)
                 {
-                    _distance = _newDistance;
+                    _minorAngle = _panelAngle;
                     _near = p;
                 }
             }
 
-            nearPanel = _near;
+            if (nearPanel != _near)
+            {
+                nearPanel = _near;
+                onSelectPanel.Invoke(nearPanel);
+            }
         }
 
         private bool IsOnScreen(Camera camera, Vector3 point)
