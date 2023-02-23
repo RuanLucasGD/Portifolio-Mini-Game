@@ -16,7 +16,7 @@ public class GraphicsManager : MonoBehaviour
 
         var _isMobile = WebglPlugin.IsMobile;
 
-        Application.targetFrameRate = _isMobile ? 30 : 60;
+        Application.targetFrameRate = _isMobile ? 60 : 120;
 
         graphicsSettings.UpdateAllShaders();
 

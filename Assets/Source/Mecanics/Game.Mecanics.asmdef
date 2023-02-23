@@ -2,7 +2,8 @@
     "name": "Game.Mecanics",
     "rootNamespace": "",
     "references": [
-        "GUID:244c241921a7319408de68cec4a23af3"
+        "GUID:244c241921a7319408de68cec4a23af3",
+        "GUID:17c8a6222757449488e97e41c40f2bc4"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
