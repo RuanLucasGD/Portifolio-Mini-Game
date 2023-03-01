@@ -1,25 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Game.Mecanics;
+using UnityEngine.Events;
 
-namespace Game
+namespace Game.Mecanics
 {
-    public class InteractivePanel : MonoBehaviour
+    public class InteractivePanel : Interactive
     {
         public float colorTransitionSpeed;
         [Space]
         public float selectedColorIntensity;
         public float overColorIntensity;
         public float pressedColorIntensity;
-        [Space]
 
-        private PlayerTurretController playerTurretController;
+        [Space]
+        public GameObject spawnOnDestroy;
+        public Transform center;
+        public float recreateAfterTime;
+
+        [Space]
+        public UnityEvent<InteractivePanel> onOver;
+        public UnityEvent<InteractivePanel> onSelect;
+        public UnityEvent<InteractivePanel> onPress;
+        public UnityEvent<InteractivePanel> onInteractionCompleted;
+
         private MeshRenderer meshRenderer;
         private MaterialPropertyBlock materialProperties;
 
         private bool isSelected;
         private float currentIntensity;
+
+        public bool IsPressing { get; private set; }
+        public bool IsOver { get; private set; }
+        public bool DestroyOnInteract { get; set; }
 
         public InteractivePanel()
         {
@@ -30,34 +43,34 @@ namespace Game
         {
             meshRenderer = GetComponent<MeshRenderer>();
             materialProperties = new MaterialPropertyBlock();
-            playerTurretController = FindObjectOfType<PlayerTurretController>();
-
-            if (!playerTurretController)
-            {
-                Debug.LogError($"{typeof(PlayerTurretController).Name} not finded on scene");
-            }
-            else
-            {
-                playerTurretController.onSelectPanel.AddListener(OnPlayerSelectPanel);
-            }
+            onInteract += OnInteract;
         }
 
         void Update()
         {
             UpdateMaterialColor();
 
-            var _isPressing = IsTouching(out var hit);
+            var _isPressingScreen = IsTouching(out var hit);
             var _isOverPanel = hit.transform == transform;
+            var _isPressingPanel = _isPressingScreen && _isOverPanel;
 
-            if (_isPressing && _isOverPanel)
+            if (_isPressingPanel != IsPressing)
             {
-                SetPressed();
+                IsPressing = _isPressingScreen;
+                if (IsPressing)
+                {
+                    SetPressed();
+                }
             }
 
-            if (!_isPressing && _isOverPanel)
+            if (_isOverPanel != IsOver)
             {
+                IsOver = _isOverPanel;
 
-                SetOver();
+                if (IsOver)
+                {
+                    SetOver();
+                }
             }
 
             if (isSelected)
@@ -82,7 +95,18 @@ namespace Game
 
         private void UpdateMaterialColor()
         {
+            if (!meshRenderer || currentIntensity < 0.01f)
+            {
+                return;
+            }
+
             if (currentIntensity > 0.01f)
+            {
+                materialProperties.SetFloat("_Intensity", currentIntensity);
+                meshRenderer.SetPropertyBlock(materialProperties);
+            }
+
+            if (!IsPressing && !IsOver)
             {
                 var _decreaseSpeed = Mathf.Min(currentIntensity * Time.deltaTime * colorTransitionSpeed, currentIntensity);
                 currentIntensity -= _decreaseSpeed;
@@ -91,22 +115,6 @@ namespace Game
                 {
                     currentIntensity = 0;
                 }
-
-                if (meshRenderer)
-                {
-                    materialProperties.SetFloat("_Intensity", currentIntensity);
-                    meshRenderer.SetPropertyBlock(materialProperties);
-                }
-            }
-        }
-
-        private void OnPlayerSelectPanel(GameObject selectedPanel)
-        {
-            isSelected = selectedPanel == gameObject;
-
-            if (playerTurretController && !playerTurretController.IsOnInteractiveArea)
-            {
-                isSelected = false;
             }
         }
 
@@ -116,11 +124,14 @@ namespace Game
             {
                 currentIntensity = selectedColorIntensity;
             }
+
+            onSelect.Invoke(this);
         }
 
         private void SetPressed()
         {
             currentIntensity = pressedColorIntensity;
+            onPress.Invoke(this);
         }
 
         private void SetOver()
@@ -129,6 +140,29 @@ namespace Game
             {
                 currentIntensity = overColorIntensity;
             }
+
+            onOver.Invoke(this);
+        }
+
+        private void OnInteract()
+        {
+            if (DestroyOnInteract && spawnOnDestroy)
+            {
+                gameObject.SetActive(false);
+                var _spawned = Instantiate(spawnOnDestroy, transform.position, transform.rotation);
+                Destroy(_spawned, recreateAfterTime);
+                GameManager.Instance.StartCoroutine(Reenable());
+
+                DestroyOnInteract = false;
+            }
+
+            onInteractionCompleted.Invoke(this);
+        }
+
+        private IEnumerator Reenable()
+        {
+            yield return new WaitForSeconds(recreateAfterTime);
+            gameObject.SetActive(true);
         }
     }
 }

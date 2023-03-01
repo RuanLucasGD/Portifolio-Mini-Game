@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &458888099272215660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 746517382792628660}
+  m_Layer: 10
+  m_Name: Center
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &746517382792628660
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458888099272215660}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.87, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7708203748898350432}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7039929775357165530
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,7 +43,8 @@ GameObject:
   - component: {fileID: 8841171508214914575}
   - component: {fileID: 7039929775357165531}
   - component: {fileID: 6604734536016425416}
-  m_Layer: 0
+  - component: {fileID: 1068015681336023553}
+  m_Layer: 10
   m_Name: Panel
   m_TagString: Panels
   m_Icon: {fileID: 0}
@@ -32,6 +63,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7886844207500359369}
+  - {fileID: 746517382792628660}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -225, z: 0}
@@ -114,6 +146,50 @@ MonoBehaviour:
   selectedColorIntensity: 1
   overColorIntensity: 2
   pressedColorIntensity: 10
+  spawnOnDestroy: {fileID: 8779007796143367872, guid: bff03c42692703a4394648f1cb4ec4cf, type: 3}
+  center: {fileID: 746517382792628660}
+  recreateAfterTime: 5
+  onOver:
+    m_PersistentCalls:
+      m_Calls: []
+  onSelect:
+    m_PersistentCalls:
+      m_Calls: []
+  onPress:
+    m_PersistentCalls:
+      m_Calls: []
+  onInteractionCompleted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1068015681336023553}
+        m_TargetAssemblyTypeName: Game.Utils.UrlLink, Game.Utils
+        m_MethodName: OpenLinkDelayed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1068015681336023553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7039929775357165530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bac542197f892419d0248dfc4239f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  link: https://www.google.com/
+  delay: 0.2
+  onOpen:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7886844207500359368
 GameObject:
   m_ObjectHideFlags: 0

@@ -239,7 +239,7 @@ namespace MMV
 
             var _maxRayDist = settings.SpringHeight + settings.WheelRadius + settings.SpringLength;
 
-            if (Physics.Raycast(_springPosition, -Rb.transform.up * settings.SpringHeight, out wheelHit, _maxRayDist))
+            if (Physics.Raycast(_springPosition, -Rb.transform.up * settings.SpringHeight, out wheelHit, _maxRayDist, settings.CollisionLayer))
             {
                 //---get current spring length
 

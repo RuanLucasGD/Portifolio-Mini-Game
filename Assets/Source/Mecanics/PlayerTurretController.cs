@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Game.Utils;
 
 namespace Game.Mecanics
 {
     public class PlayerTurretController : MonoBehaviour
     {
         [Tooltip("Tag of panels to turret lookAt.")]
-        public string panelsTag;
         public InteractiveTrigger interactiveTrigger;
         public MMV.MMV_ShooterManager vehicleWeapon;
+        public MMV.MMV_Vehicle vehicle;
+
+        [Space]
+        [Range(0.5f, 1)] public float shotPrecision;
+        public LayerMask aimObstacles;
 
         [Space]
         public UnityEvent<GameObject> onSelectPanel;
@@ -18,18 +23,51 @@ namespace Game.Mecanics
         private const float GET_IN_VIEW_PANELS_INTERVAL = 1f;
         private const float GET_NEAR_PANELS_INTERVAL = 0.5f;
 
-        private GameObject[] allPanels;
-        private GameObject[] inViewPanels;
-        private GameObject nearPanel;
+        private GameObject[] interactablesInView;
+
+        public Transform Target { get; set; }
 
         public bool IsOnInteractiveArea { get; private set; }
+        public bool AutoSelectPanel { get; set; }
+        public bool CanShot { get; set; }
+        public bool CanVehicleMove { get; set; }
+        public bool IsVehicleMoving => (vehicle.IsAccelerating || vehicle.IsTurning) && CanVehicleMove;
+
+        public bool TargetOnView
+        {
+            get
+            {
+                if (!vehicleWeapon || !vehicleWeapon.Rotation.VerticalTransform)
+                {
+                    return false;
+                }
+
+                var _weaponCannon = vehicleWeapon.Rotation.VerticalTransform;
+                var _targetPosition = vehicleWeapon.TargetPosition;
+                var _dotAngleToTarget = Vector3.Dot(_weaponCannon.forward, (Target.transform.position - _weaponCannon.position).normalized);
+                var _distanceToTarget = Vector3.Distance(vehicle.transform.position, Target.transform.position);
+
+                // the greater the distance, the greater the accuracy
+                var _precisionByDistance = 1 - Mathf.Max(_dotAngleToTarget, 0);
+                _precisionByDistance = Mathf.Max(_precisionByDistance, 1);
+                _precisionByDistance = _dotAngleToTarget / _precisionByDistance;
+
+                return _precisionByDistance > shotPrecision;
+            }
+        }
+
+        public PlayerTurretController()
+        {
+            shotPrecision = 0.8f;
+        }
 
         void Start()
         {
-            interactiveTrigger.onEnter.AddListener(OnEnter);
-            interactiveTrigger.onExit.AddListener(OnExit);
-            allPanels = GameObject.FindGameObjectsWithTag(panelsTag);
-            inViewPanels = new GameObject[] { };
+            interactiveTrigger.onEnter.AddListener(OnEnterOnInteractiveArea);
+            interactiveTrigger.onExit.AddListener(OnExitOfInteractiveArea);
+            interactablesInView = new GameObject[] { };
+            AutoSelectPanel = true;
+            CanVehicleMove = true;
 
             InvokeRepeating(nameof(UpdateInViewPanelsList), GET_IN_VIEW_PANELS_INTERVAL, GET_IN_VIEW_PANELS_INTERVAL);
             InvokeRepeating(nameof(UpdateFindPanelOnScreenCenter), GET_NEAR_PANELS_INTERVAL, GET_NEAR_PANELS_INTERVAL);
@@ -42,13 +80,35 @@ namespace Game.Mecanics
                 return;
             }
 
-            if (IsOnInteractiveArea && inViewPanels.Length > 0)
+            if (!CanVehicleMove)
+            {
+                vehicle.IsBraking = true;
+            }
+
+            if (IsOnInteractiveArea && interactablesInView.Length > 0)
             {
                 TurretLookAtPanels();
+                ShootWhenInteractWithPanel();
             }
             else
             {
                 TurretLookAtForward();
+            }
+        }
+
+        private void ShootWhenInteractWithPanel()
+        {
+            if (!CanShot)
+            {
+                return;
+            }
+
+            if (TargetOnView)
+            {
+                if (vehicleWeapon.CanShot)
+                {
+                    vehicleWeapon.Shoot();
+                }
             }
         }
 
@@ -59,17 +119,17 @@ namespace Game.Mecanics
 
         private void TurretLookAtPanels()
         {
-            if (inViewPanels.Length == 0 || !nearPanel)
+            if (interactablesInView.Length == 0 || !Target)
             {
                 return;
             }
 
-            vehicleWeapon.TargetPosition = nearPanel.transform.position;
+            vehicleWeapon.TargetPosition = Target.transform.position;
         }
 
         private void UpdateInViewPanelsList()
         {
-            if (!IsOnInteractiveArea)
+            if (!IsOnInteractiveArea || !AutoSelectPanel)
             {
                 return;
             }
@@ -77,29 +137,29 @@ namespace Game.Mecanics
             var _camera = Camera.main;
             var _inView = new List<GameObject>();
 
-            foreach (var p in allPanels)
+            foreach (var p in GameManager.Instance.Interactables)
             {
-                if (IsOnScreen(_camera, p.transform.position))
+                if (CameraUtils.IsOnScreen(_camera, p.transform.position))
                 {
-                    _inView.Add(p);
+                    _inView.Add(p.gameObject);
                 }
             }
 
-            inViewPanels = _inView.ToArray();
+            interactablesInView = _inView.ToArray();
         }
 
         private void UpdateFindPanelOnScreenCenter()
         {
-            if (inViewPanels.Length == 0)
+            if (interactablesInView.Length == 0 || !AutoSelectPanel)
             {
                 return;
             }
 
-            var _near = inViewPanels[0];
+            var _near = interactablesInView[0];
             var _camera = Camera.main.transform;
             var _minorAngle = Vector3.Angle(_camera.forward, (_near.transform.position - _camera.position).normalized);
 
-            foreach (var p in inViewPanels)
+            foreach (var p in interactablesInView)
             {
                 // angle to camera direction
                 var _panelAngle = Vector3.Angle(_camera.forward, (p.transform.position - _camera.position).normalized);
@@ -111,47 +171,31 @@ namespace Game.Mecanics
                 }
             }
 
-            if (nearPanel != _near)
+            if (Target != _near)
             {
-                nearPanel = _near;
-                onSelectPanel.Invoke(nearPanel);
+                Target = _near.transform;
+                onSelectPanel.Invoke(Target.gameObject);
+
             }
         }
 
-        private bool IsOnScreen(Camera camera, Vector3 point)
-        {
-            if (!camera)
-            {
-                return false;
-            }
-
-            if (Vector3.Dot(camera.transform.forward, (point - camera.transform.position).normalized) < 0)
-            {
-                return false;
-            }
-
-            var _screenPoint = camera.WorldToScreenPoint(point);
-
-            return (_screenPoint.x > 0) &&
-                   (_screenPoint.y > 0) &&
-                   (_screenPoint.x < Screen.width) &&
-                   (_screenPoint.y < Screen.height);
-        }
-
-        private void OnEnter(Collider other)
+        private void OnEnterOnInteractiveArea(Collider other)
         {
             IsOnInteractiveArea = true;
             UpdateInViewPanelsList();
             UpdateFindPanelOnScreenCenter();
-            onSelectPanel.Invoke(nearPanel);
         }
 
-        private void OnExit(Collider other)
+        private void OnExitOfInteractiveArea(Collider other)
         {
             IsOnInteractiveArea = false;
             onSelectPanel.Invoke(null);
         }
+
+        public void Interact(Transform target)
+        {
+            Target = target;
+            onSelectPanel.Invoke(Target.gameObject);
+        }
     }
 }
-
-

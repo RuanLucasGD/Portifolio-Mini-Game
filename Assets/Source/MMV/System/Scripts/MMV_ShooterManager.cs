@@ -69,6 +69,7 @@ namespace MMV
             [SerializeField] private UnityEvent onReloaded;
             [SerializeField] private UnityEvent onShot;
             [SerializeField] private UnityEvent<MMV_Projectile.ProjectileHitInfo> onProjectileHit;
+            [SerializeField] private UnityEvent onDestrotyed;
             [Space]
             [SerializeField] private AudioSource shootAudioSource;
             [SerializeField] private AudioClip shootAudioClip;
@@ -152,6 +153,12 @@ namespace MMV
             /// </summary>
             /// <value></value>
             public UnityEvent<MMV_Projectile.ProjectileHitInfo> OnProjectileHit { get => onProjectileHit; set => onProjectileHit = value; }
+
+            /// <summary>
+            /// Execute actions when projectile's destroyed
+            /// </summary>
+            /// <value></value>
+            public UnityEvent OnProjectileDestroyed { get => onDestrotyed; set => onDestrotyed = value; }
 
             /// <summary>
             /// Called when weapon is reloaded
@@ -602,11 +609,10 @@ namespace MMV
                 var _audioSource = Weapon.ShootAudioSource;
                 var _audioClip = Weapon.ShootAudioClip;
 
-                // if exist events to call when projectile hits on objects
-                if (Weapon.OnProjectileHit.GetPersistentEventCount() > 0)
-                {
-                    _projectile.GetComponent<MMV_Projectile>().OnHit.AddListener((hitInfo) => Weapon.OnProjectileHit.Invoke(hitInfo));
-                }
+                var _projectileComponent = _projectile.GetComponent<MMV_Projectile>();
+
+                _projectileComponent.OnHit.AddListener((hitInfo) => Weapon.OnProjectileHit.Invoke(hitInfo));
+                _projectileComponent.OnDestroyed.AddListener(() => Weapon.OnProjectileDestroyed.Invoke());
 
                 Destroy(_projectile.gameObject, _lifeTime);
                 ApplyRecoil(weapon);

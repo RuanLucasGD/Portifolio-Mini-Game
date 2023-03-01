@@ -118,7 +118,7 @@ namespace Game.Mecanics
 
         private void UpdateMouseDrag()
         {
-            IsMouseTouchingScreen = Input.GetKey(KeyCode.Mouse0);
+            IsMouseTouchingScreen = Input.GetKey(KeyCode.Mouse1);
 
             if (IsMouseTouchingScreen && !UseTouchScreen)
             {

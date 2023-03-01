@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2882092153151471043, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
       propertyPath: m_Name
-      value: Player Tank
+      value: Player Tank Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882092153151471043, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3221462586612049785, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
       propertyPath: m_RootOrder
@@ -62,6 +66,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2882092153151471043, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
   m_PrefabInstance: {fileID: 4464724186004102890}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1642605120424213556 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3116022938944529118, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
+  m_PrefabInstance: {fileID: 4464724186004102890}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876555697392853801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b203a0c25b02ee4fbfef35fb9bfae15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2855756093820713746 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1897227055671125496, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
@@ -86,6 +101,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5, y: 0.2, z: 10}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!81 &2974398377561563748
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876555697392853801}
+  m_Enabled: 1
 --- !u!114 &33626720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,6 +124,18 @@ MonoBehaviour:
   panelsTag: Panels
   interactiveTrigger: {fileID: 33626721}
   vehicleWeapon: {fileID: 2855756093820713746}
+  vehicle: {fileID: 1642605120424213556}
+  shotPrecision: 0.99
+  disableShotDelay: 0
+  panels:
+    serializedVersion: 2
+    m_Bits: 1024
+  aimObstacles:
+    serializedVersion: 2
+    m_Bits: 2999
+  onSelectPanel:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &33626721
 MonoBehaviour:
   m_ObjectHideFlags: 0

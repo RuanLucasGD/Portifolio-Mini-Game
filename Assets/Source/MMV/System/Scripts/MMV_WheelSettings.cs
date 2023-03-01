@@ -12,6 +12,7 @@ namespace MMV
         [SerializeField] private float wheelRadius;
         [SerializeField] private float springLength;
         [SerializeField] private float springHeight;
+        [SerializeField] private LayerMask collisionLayer;
         [Space]
         [SerializeField] private int springStiffness;
         [SerializeField] private AnimationCurve springForceByCompression;
@@ -161,6 +162,12 @@ namespace MMV
         /// </summary>
         /// <value></value>
         public AnimationCurve DownForce { get => downForceCurve; set => downForceCurve = value; }
+
+        /// <summary>
+        /// Collisions layer
+        /// </summary>
+        /// <value></value>
+        public LayerMask CollisionLayer { get => collisionLayer; set => collisionLayer = value; }
 
         public MMV_WheelSettings()
         {

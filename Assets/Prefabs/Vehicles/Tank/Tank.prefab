@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8702168955110137566}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 933599664490341063}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_R.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5360777530829041548}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_R.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5457883683389251095}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4736530130577655719}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_R.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 3764554924473152896}
   - component: {fileID: 7202026302448217698}
   - component: {fileID: 7217753184088852873}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wl 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3031190857304496008}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_R.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 69889833184756131}
   - component: {fileID: 7167682988914438582}
   - component: {fileID: 3675135872418462229}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wr 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7821785908926521603}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_R.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +382,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4294801010258350967}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_R.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4663524525695325578}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_L.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 8917833387515539312}
   - component: {fileID: 617717994997577652}
   - component: {fileID: 3116022940253322853}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,8 +544,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.3782887, y: 0.8182993, z: 5.2646027}
-  m_Center: {x: 0, y: 0.78341556, z: 0.03659582}
+  m_Size: {x: 2.3782887, y: 0.97480893, z: 5.2646027}
+  m_Center: {x: 0, y: 0.70516086, z: 0.03659582}
 --- !u!1 &2882092153151471043
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 3221462586612049785}
   - component: {fileID: 3116022938944529119}
   - component: {fileID: 3116022938944529118}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -726,7 +726,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5911649321228731564}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_L.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -758,7 +758,7 @@ GameObject:
   - component: {fileID: 8780848422037641159}
   - component: {fileID: 7266441361466425129}
   - component: {fileID: 7733942352612548975}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wr 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -837,7 +837,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1278586485774934307}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_R.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -869,7 +869,7 @@ GameObject:
   - component: {fileID: 3030707071979589051}
   - component: {fileID: 5029002302148771315}
   - component: {fileID: 6220229227820415832}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -949,7 +949,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8950956266745028334}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1011,7 +1011,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4123349370653802978}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_R.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1041,7 +1041,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7852274146119412799}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_R.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1071,7 +1071,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8251003296162049909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_L.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1101,7 +1101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4405181714321444246}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_L.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1131,7 +1131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3564472121715331158}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_R.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1163,7 +1163,7 @@ GameObject:
   - component: {fileID: 6973783934897082022}
   - component: {fileID: 4387031687350132298}
   - component: {fileID: 7867824670385053540}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wl 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1244,7 +1244,7 @@ GameObject:
   - component: {fileID: 1336724341586378014}
   - component: {fileID: 4194575189669053107}
   - component: {fileID: 5278232866697644890}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wr 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1323,7 +1323,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4649749950774527073}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_L.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1353,7 +1353,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4693293870217987795}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_L.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1385,7 +1385,7 @@ GameObject:
   - component: {fileID: 6696337603491343117}
   - component: {fileID: 9191727460610233604}
   - component: {fileID: 1424950586432088134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wl 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1464,7 +1464,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8572848436646196223}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_R.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1494,7 +1494,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2697203602737484827}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_L.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1526,7 +1526,7 @@ GameObject:
   - component: {fileID: 3613489359412710849}
   - component: {fileID: 3848620103025912574}
   - component: {fileID: 6905080158510727552}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wl 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1605,7 +1605,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3898078456297370570}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_L.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1635,7 +1635,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8241372164210112732}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_L.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1667,7 +1667,7 @@ GameObject:
   - component: {fileID: 7443179433241021220}
   - component: {fileID: 762990775624302825}
   - component: {fileID: 3055579743896495680}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wr 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1748,7 +1748,7 @@ GameObject:
   - component: {fileID: 5547224145141512805}
   - component: {fileID: 2826432856347996515}
   - component: {fileID: 6124652173202473489}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cannon Part 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1765,7 +1765,8 @@ Transform:
   m_LocalRotation: {x: -0.00000011920929, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0.000000037956852, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2672839862189220341}
   m_Father: {fileID: 3030707071979589051}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1827,7 +1828,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1642255558921468414}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_R.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1848,6 +1849,36 @@ Transform:
   m_Father: {fileID: 8950956266745028334}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7068116204188999124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2672839862189220341}
+  m_Layer: 6
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2672839862189220341
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7068116204188999124}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2.336}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5547224145141512805}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7429281925574602077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1857,7 +1888,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3059165051902979821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_L.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1887,7 +1918,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1241135099220739910}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_L.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1919,7 +1950,7 @@ GameObject:
   - component: {fileID: 3671527372302229807}
   - component: {fileID: 5548572027913040589}
   - component: {fileID: 1893133891341225762}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wr 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1998,7 +2029,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5024604490555409878}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_R.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2028,7 +2059,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4632842895598242690}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_L.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2058,7 +2089,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6871110839066503548}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_L.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2090,7 +2121,7 @@ GameObject:
   - component: {fileID: 8617732193818908422}
   - component: {fileID: 3009309946775806214}
   - component: {fileID: 4206219756996889280}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wl 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2170,7 +2201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5217555517768194735}
   - component: {fileID: 3335638699473278176}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Track Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2285,7 +2316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5977667260481201292}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_R.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2315,7 +2346,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7839981532502296639}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_R.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2346,7 +2377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8384966325948113338}
   - component: {fileID: 5439992081150213348}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Track Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2463,7 +2494,7 @@ GameObject:
   - component: {fileID: 8053053312602311932}
   - component: {fileID: 7682335897941733587}
   - component: {fileID: 6656705968870642508}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wl 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2544,7 +2575,7 @@ GameObject:
   - component: {fileID: 121522928448984379}
   - component: {fileID: 2423789457014432762}
   - component: {fileID: 7617979330744158342}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wl 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2625,7 +2656,7 @@ GameObject:
   - component: {fileID: 1833133331715184153}
   - component: {fileID: 335152839306491778}
   - component: {fileID: 2552859144361835462}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wr 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2704,7 +2735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4472488663977175498}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_L.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2734,7 +2765,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8864087903620009085}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2767,7 +2798,7 @@ GameObject:
   - component: {fileID: 6477661004571858550}
   - component: {fileID: 4590722138874540621}
   - component: {fileID: 1897227055671125496}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2851,15 +2882,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon:
-    enabled: 0
-    spawner: {fileID: 0}
-    projectile: {fileID: 0}
-    projectileLifeTime: 10
-    shotInterval: 0.2
-    reloadTime: 2
+    enabled: 1
+    spawner: {fileID: 2672839862189220341}
+    projectile: {fileID: 8253545013196529488, guid: c5318d527c988844589fd9eb8abccad3, type: 3}
+    projectileLifeTime: 1
+    shotInterval: 3
+    reloadTime: 3
     ammunationBySlot: 60
     ammunationSlots: 2
-    infinityAmmunation: 0
+    infinityAmmunation: 1
     onStartReload:
       m_PersistentCalls:
         m_Calls: []
@@ -2872,9 +2903,22 @@ MonoBehaviour:
     onProjectileHit:
       m_PersistentCalls:
         m_Calls: []
+    onDestrotyed:
+      m_PersistentCalls:
+        m_Calls: []
     shootAudioSource: {fileID: 0}
     shootAudioClip: {fileID: 0}
-    shotEffects: []
+    shotEffects:
+    - name: Fire Mesh
+      prefabs:
+      - {fileID: 8218306812868921182, guid: 1661fbdf2a03f68438305b5a096ee787, type: 3}
+      asChild: 1
+      lifeTime: 1
+    - name: Fire Sound
+      prefabs:
+      - {fileID: 4117638234307518210, guid: 121c67f4113cf2a46ab7847dc009c500, type: 3}
+      asChild: 0
+      lifeTime: 10
   rotation:
     turnWeaponEnabled: 1
     horizontalTransform: {fileID: 3804075634027799084}
@@ -2885,8 +2929,8 @@ MonoBehaviour:
     maxVerticalAngle: 45
     maxHorizontalAngle: 180
   recoil:
-    recoilForce: 500
-    vehicle: {fileID: 0}
+    recoilForce: 1300
+    vehicle: {fileID: 3116022938944529119}
     animationLength: 1
     animation:
       serializedVersion: 2
@@ -2942,7 +2986,7 @@ GameObject:
   - component: {fileID: 320212241515442758}
   - component: {fileID: 2651704681524419504}
   - component: {fileID: 6840661003798983461}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wr 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3023,7 +3067,7 @@ GameObject:
   - component: {fileID: 9012443311395175042}
   - component: {fileID: 612110448190867450}
   - component: {fileID: 3776561356010341677}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wr 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3102,7 +3146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2160549735370002908}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone_L.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3134,7 +3178,7 @@ GameObject:
   - component: {fileID: 2254777019008521456}
   - component: {fileID: 7834056356009357328}
   - component: {fileID: 7750943089173199673}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wl 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}

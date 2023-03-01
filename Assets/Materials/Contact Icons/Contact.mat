@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Contact
-  m_Shader: {fileID: -6465566751694194690, guid: ea11dd190f5419f408548000c8077c4e, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: ef94b44e6fe59904899fdb2bdabb95a1, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -32,6 +32,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_5dc0d9a9a84a43ffb10efd1162229bf2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_bcca4e3778164512a9a045547d262f8f:
         m_Texture: {fileID: 2800000, guid: 8ec273829e0f473478c91a50cd8b5386, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -93,6 +97,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_c6a92d6aa78f492e86786f7fedd0d8a6: 0.2
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -115,11 +120,13 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _Specular_Intensity: 10
     - _SrcBlend: 1
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_ec15103939d04e99973a8c99d2f196db: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

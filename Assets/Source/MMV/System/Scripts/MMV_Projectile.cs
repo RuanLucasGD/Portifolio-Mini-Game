@@ -61,6 +61,7 @@ namespace MMV
         [Space]
         [SerializeField] private LayerMask hitlayer;
         [SerializeField] private UnityEvent<ProjectileHitInfo> onHit;
+        [SerializeField] private UnityEvent onDestrotyed;
         [SerializeField] private HitSpawn[] spawnOnHit;
 
         [Space]
@@ -88,6 +89,12 @@ namespace MMV
         /// </summary>
         /// <value></value>
         public UnityEvent<ProjectileHitInfo> OnHit { get => onHit; set => onHit = value; }
+
+        /// <summary>
+        /// Execute actions when projectile's destroyed
+        /// </summary>
+        /// <value></value>
+        public UnityEvent OnDestroyed { get => onDestrotyed; set => onDestrotyed = value; }
 
         /// <summary>
         /// Effects to spawn on projectile hit
@@ -142,6 +149,11 @@ namespace MMV
         private void FixedUpdate()
         {
             CheckProjectileHits();
+        }
+
+        private void OnDestroy()
+        {
+            onDestrotyed.Invoke();
         }
 
         private void CheckProjectileHits()

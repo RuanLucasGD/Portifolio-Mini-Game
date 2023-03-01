@@ -1,9 +1,7 @@
 {
     "name": "Game.Environment",
     "rootNamespace": "",
-    "references": [
-        "GUID:851b42b81c1721e4cb5ce9e86f5c107e"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

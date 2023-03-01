@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheelRadius: 0.3
   springLength: 0.3
-  springHeight: 0.2
+  springHeight: 0.1
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 183
   springStiffness: 15000
   springForceByCompression:
     serializedVersion: 2

@@ -3381,6 +3381,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 261158368}
     m_Modifications:
+    - target: {fileID: 1068015681336023553, guid: 9bd99c25c43232549a2ba3c0194aed45, type: 3}
+      propertyPath: link
+      value: https://github.com/RuanLucasGD/Polygon-GameEngine-Study-Version-01
+      objectReference: {fileID: 0}
     - target: {fileID: 7039929775357165530, guid: 9bd99c25c43232549a2ba3c0194aed45, type: 3}
       propertyPath: m_Name
       value: Polygon Panel
@@ -5661,6 +5665,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 261158368}
     m_Modifications:
+    - target: {fileID: 1068015681336023553, guid: 9bd99c25c43232549a2ba3c0194aed45, type: 3}
+      propertyPath: link
+      value: https://store.steampowered.com/app/2093640/HookLoop/
+      objectReference: {fileID: 0}
     - target: {fileID: 7039929775357165530, guid: 9bd99c25c43232549a2ba3c0194aed45, type: 3}
       propertyPath: m_Name
       value: Hook & Loop Panel
@@ -6214,6 +6222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 607889174}
   - component: {fileID: 607889175}
+  - component: {fileID: 607889176}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -6248,6 +6257,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   graphicsSettings: {fileID: 11400000, guid: 6f7cb760a2fc09346b6fcc64d24b49b9, type: 2}
+--- !u!114 &607889176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607889173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9479924096d3e1b4d918138cf90ea79d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerVehicle: {fileID: 325180365}
 --- !u!4 &610918202 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2930194084126561209, guid: b13c0942ad238324c9737736a345f869, type: 3}
@@ -6883,7 +6905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2011371722441552875, guid: 836337181c8a0524e86c74eca04024c5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.050186884
+      value: -0.0026738995
       objectReference: {fileID: 0}
     - target: {fileID: 2011371722441552875, guid: 836337181c8a0524e86c74eca04024c5, type: 3}
       propertyPath: m_LocalRotation.x
@@ -6891,7 +6913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2011371722441552875, guid: 836337181c8a0524e86c74eca04024c5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.99873984
+      value: 0.9999964
       objectReference: {fileID: 0}
     - target: {fileID: 2011371722441552875, guid: 836337181c8a0524e86c74eca04024c5, type: 3}
       propertyPath: m_LocalRotation.z
@@ -6903,7 +6925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2011371722441552875, guid: 836337181c8a0524e86c74eca04024c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 174.247
+      value: 180.306
       objectReference: {fileID: 0}
     - target: {fileID: 2011371722441552875, guid: 836337181c8a0524e86c74eca04024c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -7165,7 +7187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5524851500075326525, guid: 03bd2ebcebe02c849a10108f917f8bef, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.050186884
+      value: -0.00015891159
       objectReference: {fileID: 0}
     - target: {fileID: 5524851500075326525, guid: 03bd2ebcebe02c849a10108f917f8bef, type: 3}
       propertyPath: m_LocalRotation.x
@@ -7173,7 +7195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5524851500075326525, guid: 03bd2ebcebe02c849a10108f917f8bef, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.99873984
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5524851500075326525, guid: 03bd2ebcebe02c849a10108f917f8bef, type: 3}
       propertyPath: m_LocalRotation.z
@@ -7185,7 +7207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5524851500075326525, guid: 03bd2ebcebe02c849a10108f917f8bef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 174.247
+      value: 180.018
       objectReference: {fileID: 0}
     - target: {fileID: 5524851500075326525, guid: 03bd2ebcebe02c849a10108f917f8bef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -8480,6 +8502,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 261158368}
     m_Modifications:
+    - target: {fileID: 1068015681336023553, guid: 9bd99c25c43232549a2ba3c0194aed45, type: 3}
+      propertyPath: link
+      value: https://github.com/RuanLucasGD/Text-to-Voice
+      objectReference: {fileID: 0}
     - target: {fileID: 7039929775357165530, guid: 9bd99c25c43232549a2ba3c0194aed45, type: 3}
       propertyPath: m_Name
       value: Text To Voice Panel
@@ -15627,7 +15653,7 @@ Transform:
   m_GameObject: {fileID: 1677849249}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.56553, z: 1}
   m_Children:
   - {fileID: 1274309291}
   - {fileID: 1817219717}
@@ -16456,7 +16482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2011371722441552875, guid: 836337181c8a0524e86c74eca04024c5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.050186884
+      value: 0.0032168906
       objectReference: {fileID: 0}
     - target: {fileID: 2011371722441552875, guid: 836337181c8a0524e86c74eca04024c5, type: 3}
       propertyPath: m_LocalRotation.x
@@ -16464,7 +16490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2011371722441552875, guid: 836337181c8a0524e86c74eca04024c5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.99873984
+      value: 0.9999948
       objectReference: {fileID: 0}
     - target: {fileID: 2011371722441552875, guid: 836337181c8a0524e86c74eca04024c5, type: 3}
       propertyPath: m_LocalRotation.z
@@ -16476,7 +16502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2011371722441552875, guid: 836337181c8a0524e86c74eca04024c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 174.247
+      value: 179.631
       objectReference: {fileID: 0}
     - target: {fileID: 2011371722441552875, guid: 836337181c8a0524e86c74eca04024c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -17601,6 +17627,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 261158368}
     m_Modifications:
+    - target: {fileID: 1068015681336023553, guid: 9bd99c25c43232549a2ba3c0194aed45, type: 3}
+      propertyPath: link
+      value: https://www.youtube.com/@olahumanos5890
+      objectReference: {fileID: 0}
     - target: {fileID: 7039929775357165530, guid: 9bd99c25c43232549a2ba3c0194aed45, type: 3}
       propertyPath: m_Name
       value: Flax Engine Panel
@@ -17718,7 +17748,7 @@ Transform:
   - {fileID: 458620521}
   - {fileID: 1154459170}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1914491494
 PrefabInstance:
@@ -18325,6 +18355,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 261158368}
     m_Modifications:
+    - target: {fileID: 1068015681336023553, guid: 9bd99c25c43232549a2ba3c0194aed45, type: 3}
+      propertyPath: link
+      value: https://u3d.as/2B6p
+      objectReference: {fileID: 0}
+    - target: {fileID: 6604734536016425416, guid: 9bd99c25c43232549a2ba3c0194aed45, type: 3}
+      propertyPath: onPress.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6604734536016425416, guid: 9bd99c25c43232549a2ba3c0194aed45, type: 3}
+      propertyPath: onPress.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7039929775357165530, guid: 9bd99c25c43232549a2ba3c0194aed45, type: 3}
       propertyPath: m_Name
       value: MMV Panel
@@ -19394,11 +19436,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1243290204146923923, guid: 6addf2ae4c97f5942847d440067a471a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1243290204146923923, guid: 6addf2ae4c97f5942847d440067a471a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.2
+      value: 9.46
       objectReference: {fileID: 0}
     - target: {fileID: 1243290204146923923, guid: 6addf2ae4c97f5942847d440067a471a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19406,7 +19448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1243290204146923923, guid: 6addf2ae4c97f5942847d440067a471a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -95.7
+      value: -87.94
       objectReference: {fileID: 0}
     - target: {fileID: 1243290204146923923, guid: 6addf2ae4c97f5942847d440067a471a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19497,10 +19539,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Email
       objectReference: {fileID: 0}
-    - target: {fileID: 8287798173474661710, guid: cd865b4c0441d5e459cb31d1457a5cac, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd865b4c0441d5e459cb31d1457a5cac, type: 3}
 --- !u!4 &4610003434705117687 stripped
@@ -19568,10 +19606,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Linkedin
       objectReference: {fileID: 0}
-    - target: {fileID: 3138241528467094967, guid: 4f26cca6b06fca74c9eb8a46f7c8a870, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f26cca6b06fca74c9eb8a46f7c8a870, type: 3}
 --- !u!1001 &6940552844678589892
@@ -19628,10 +19662,6 @@ PrefabInstance:
     - target: {fileID: 7084494467336684415, guid: df072882c41427547b80188fd2094662, type: 3}
       propertyPath: m_Name
       value: Git Hub
-      objectReference: {fileID: 0}
-    - target: {fileID: 7084494467336684415, guid: df072882c41427547b80188fd2094662, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df072882c41427547b80188fd2094662, type: 3}
