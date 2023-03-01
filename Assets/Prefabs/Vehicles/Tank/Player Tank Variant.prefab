@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3221462586612049785, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 9.46
       objectReference: {fileID: 0}
     - target: {fileID: 3221462586612049785, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -29,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3221462586612049785, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -87.94
       objectReference: {fileID: 0}
     - target: {fileID: 3221462586612049785, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -121,15 +121,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7ef693d7ac92941bc298edbd6fbd0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelsTag: Panels
   interactiveTrigger: {fileID: 33626721}
   vehicleWeapon: {fileID: 2855756093820713746}
   vehicle: {fileID: 1642605120424213556}
   shotPrecision: 0.99
-  disableShotDelay: 0
-  panels:
-    serializedVersion: 2
-    m_Bits: 1024
   aimObstacles:
     serializedVersion: 2
     m_Bits: 2999

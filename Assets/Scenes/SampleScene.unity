@@ -19482,6 +19482,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Tank
       objectReference: {fileID: 0}
+    - target: {fileID: 3439067804847612168, guid: 6addf2ae4c97f5942847d440067a471a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 0.4392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439067804847612168, guid: 6addf2ae4c97f5942847d440067a471a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 0.6431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439067804847612168, guid: 6addf2ae4c97f5942847d440067a471a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 0.6901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439067804847612168, guid: 6addf2ae4c97f5942847d440067a471a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 0.4392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439067804847612168, guid: 6addf2ae4c97f5942847d440067a471a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 0.6431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439067804847612168, guid: 6addf2ae4c97f5942847d440067a471a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 0.6901961
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6addf2ae4c97f5942847d440067a471a, type: 3}
 --- !u!1001 &2342336698301675294
