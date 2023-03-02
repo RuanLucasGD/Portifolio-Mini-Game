@@ -145,7 +145,7 @@ MonoBehaviour:
   colorTransitionSpeed: 10
   selectedColorIntensity: 1
   overColorIntensity: 2
-  pressedColorIntensity: 10
+  pressedColorIntensity: 3
   spawnOnDestroy: {fileID: 8779007796143367872, guid: bff03c42692703a4394648f1cb4ec4cf, type: 3}
   center: {fileID: 746517382792628660}
   recreateAfterTime: 5

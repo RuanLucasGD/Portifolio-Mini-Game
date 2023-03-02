@@ -52,7 +52,6 @@ namespace Game.Utils
             try
             {
                 Process.Start(link);
-
             }
             catch
             {

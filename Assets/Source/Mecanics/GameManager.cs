@@ -12,7 +12,7 @@ namespace Game.Mecanics
         private VehicleController playerVehicleController;
         private PlayerTurretController playerTurretController;
 
-        private InteractivePanel selectedPanel;
+        private InteractivePanel selectedInteractiveObject;
 
         private UrlLink[] links;
 
@@ -66,8 +66,14 @@ namespace Game.Mecanics
 
         private void Start()
         {
+            if (!playerVehicle || !playerTurretController || !playerVehicleController)
+            {
+                return;
+            }
+
             playerTurretController.vehicleWeapon.Weapon.OnProjectileDestroyed.AddListener(InteractWithSelectedPanel);
             playerTurretController.vehicleWeapon.Weapon.OnShot.AddListener(OnShot);
+            playerTurretController.onSelectPanel.AddListener(OnVehicleSelectInteractable);
 
             foreach (var i in Interactables)
             {
@@ -77,13 +83,6 @@ namespace Game.Mecanics
             foreach (var l in links)
             {
                 l.onOpen.AddListener(DisableShot);
-            }
-        }
-
-        private void Update()
-        {
-            if (!playerTurretController.CanVehicleMove)
-            {
             }
         }
 
@@ -104,7 +103,7 @@ namespace Game.Mecanics
 
         private void OnPressPanel(InteractivePanel panel)
         {
-            selectedPanel = panel;
+            selectedInteractiveObject = panel;
 
             if (playerTurretController.IsOnInteractiveArea)
             {
@@ -123,12 +122,23 @@ namespace Game.Mecanics
 
         private void InteractWithSelectedPanel()
         {
-            selectedPanel.onInteract();
+            selectedInteractiveObject.onInteract();
         }
 
         private void OnShot()
         {
             playerTurretController.CanShot = false;
+        }
+
+        private void OnVehicleSelectInteractable(GameObject interactive)
+        {
+            foreach (var i in Interactables)
+            {
+                if (i is InteractivePanel)
+                {
+                    i.IsSelected = i.gameObject == interactive.gameObject;
+                }
+            }            
         }
     }
 }
