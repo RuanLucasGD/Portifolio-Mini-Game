@@ -62,6 +62,8 @@ namespace Game.Mecanics
 
             links = FindObjectsOfType<UrlLink>();
             Interactables = FindObjectsOfType<InteractivePanel>();
+
+            
         }
 
         private void Start()

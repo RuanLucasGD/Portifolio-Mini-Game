@@ -3,27 +3,47 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>{PRODUCT_NAME}</title>
+    <title>Ruan Lucas GD</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
 </head>
 
 <body>
     <canvas id="game-canvas"></canvas>
-    <div style="height: 100%; width: 100%;">
-        <div style="height: 50%; display: flex; align-items: flex-end;">
-            <div class="loading-text">CARREGANDO</div>
-        </div>
-    
-        <div id="loading" class="loading">
-            <div id="loading-bar" class="loading-bar-field">
-                <div id="loading-progress" class="loading-bar-fill"></div>
+    <canvas id="test-canvas"></canvas>
+    <div id="bg" class="bg">
+        <div id="loading-container" class="text-container">
+            <div class="loading-text">
+                <div class="loading-text-1">Carregando</div>
             </div>
+            <div class="loading-text">
+                <div id="loading-progress" class="loading-text-2">0%</div>
+            </div>
+            <div class="loading-text">
+                <div class="loading-text-3">Espera aí, pode demorar um pouco. Que tal ir pegar uma xícara de café?
+                </div>
+            </div>
+        </div>
+        <div id="error-container" class="text-container">
+            <div class="loading-text">
+                <div class="loading-text-2">ERRO</div>
+            </div>
+            <div class="loading-text">
+                <div id="error-message" class="error">ERRO</div>
+            </div>
+        </div>
+        <div>
         </div>
     </div>
     <script>
 
         var canSetFullScreen = false;
+        var allStartScreen = document.querySelector("#bg");
+        var gameScreen = document.querySelector("#game-canvas");
+        var loadingScreen = document.querySelector("#loading-container");
+        var progress = document.querySelector("#loading-progress");
+        var errorScreen = document.querySelector("#error-container");
+        var errorMessage = document.querySelector("#error-message");
 
         isMobile = () => {
             return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -37,60 +57,102 @@
 
             unityInstance.SetFullscreen(1);
         }
-        
-        const maxPixelRatioMobile = 1;
-        const maxPixelRatioDesktop = 2;
 
-        var pixelRatio = isMobile ? maxPixelRatioMobile : maxPixelRatioDesktop;
 
-        var gameScreen = document.querySelector("#game-canvas");
-        var loadingScreen = document.querySelector("#loading");
+        IsBrowserOk = () => {
 
-        var progressBar = document.querySelector("#loading-progress");
+            var userAgent = navigator.userAgent;
 
-        loadingScreen.style.display = "flex";
-        gameScreen.style.display = "none";
+            if ((userAgent.indexOf('Chrome') > -1) ||
+                (userAgent.indexOf('Firefox') > -1) ||
+                (userAgent.indexOf('Edg') > -1 || userAgent.indexOf('Edge')) ||
+                (userAgent.indexOf('Opera') > -1 || userAgent.indexOf('OPR') > -1) ||
+                (userAgent.indexOf('Brave') > -1)) {
+                return true;
+            }
 
-        var buildUrl = "Build";
-        var loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
-        var script = document.createElement("script");
-        script.src = loaderUrl;
+            return false;
+        }
 
-        var buildUrl = "Build";
-        var config = {
-            dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
-            frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
-            codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
-            streamingAssetsUrl: "StreamingAssets",
-            companyName: "{{{ COMPANY_NAME }}}",
-            productName: "{{{ PRODUCT_NAME }}}",
-            productVersion: "{{{ PRODUCT_VERSION }}}",
-            devicePixelRatio: pixelRatio,
-        };
+        CheckWebglSupport = () => {
 
-        script.onload = () => {
-            createUnityInstance(gameScreen, config, (progress) => {
+            const canvas = document.createElement("canvas");
+            document.body.appendChild(canvas);
 
-                progressBar.style.width = (progress * 100) + "%";
-            })
-                .then((instance) => {
-                    gameScreen.style.display = "block";
-                    loadingScreen.style.display = "none";
+            var gl = canvas.getContext('webgl2');
+            var support = true;
 
-                    document.addEventListener("click", () => {
-                        SetFullScreen(instance);
-                        canSetFullScreen = true;
-                    });
-                    document.addEventListener("touchstart", () => {
-                        SetFullScreen(instance);
-                        canSetFullScreen = true;
-                    });
+            if (!gl || !gl.getExtension('EXT_color_buffer_float')) {
+                support = false;
+            }
+
+            document.body.removeChild(canvas);
+
+            return support;
+        }
+
+        var browserCompatible = IsBrowserOk();
+        var webglCompatible = CheckWebglSupport(gameScreen);
+
+        if (browserCompatible && webglCompatible) {
+            loadingScreen.style.display = "flex";
+            errorScreen.style.display = "none";
+        }
+        else {
+            loadingScreen.style.display = "none";
+            errorScreen.style.display = "flex";
+
+            if (!browserCompatible) errorMessage.textContent = "Este navegador não é compativel, tente com outro, por favor ? :)";
+            if (!webglCompatible) errorMessage.textContent = "Este navegador não suporta Webgl3, tente com outro navegador, por favor? :)";
+        }
+
+        if (browserCompatible && webglCompatible) {
+
+            const maxPixelRatioMobile = 1;
+            const maxPixelRatioDesktop = 2;
+            var pixelRatio = isMobile ? maxPixelRatioMobile : maxPixelRatioDesktop;
+
+            var buildUrl = "Build";
+            var loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
+            var script = document.createElement("script");
+            script.src = loaderUrl;
+
+            var buildUrl = "Build";
+            var config = {
+                dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
+                frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
+                codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
+                streamingAssetsUrl: "StreamingAssets",
+                companyName: "{{{ COMPANY_NAME }}}",
+                productName: "{{{ PRODUCT_NAME }}}",
+                productVersion: "{{{ PRODUCT_VERSION }}}",
+                devicePixelRatio: pixelRatio,
+            };
+
+             script.onload = () => {
+                createUnityInstance(gameScreen, config, (progress) => {
+
+                    progress.textContent = (Math.round(progress * 100)) + "%";
                 })
-                .catch((error) => {
-                    alert(error)
-                });
-        };
-        document.body.appendChild(script);
+                    .then((instance) => {
+                        gameScreen.style.display = "block";
+                        allStartScreen.style.display = "none";
+
+                        document.addEventListener("click", () => {
+                            SetFullScreen(instance);
+                            canSetFullScreen = true;
+                        });
+                        document.addEventListener("touchstart", () => {
+                            SetFullScreen(instance);
+                            canSetFullScreen = true;
+                        });
+                    })
+                    .catch((error) => {
+                        alert(error)
+                    });
+            };
+            document.body.appendChild(script);
+        }
     </script>
 </body>
 

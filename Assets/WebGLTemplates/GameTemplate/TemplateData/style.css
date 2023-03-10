@@ -4,47 +4,57 @@ html {
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: #333d29;
 }
 
 canvas {
-    display: block;
+    display: none;
     height: 100%;
     width: 100%;
 }
 
-.loading {
-    display: none;
-    justify-content: center;
-    height: 50%;
+.bg {
     width: 100%;
-    overflow: auto;
+    height: 100%;
+    position: absolute;
+    background: radial-gradient(circle, rgba(48, 43, 40, 1) 0%, rgba(29, 27, 25, 1) 100%);
 }
 
-.loading-bar-field {
+.text-container {
     display: flex;
-    align-items: center;
-    height: 40px;
-    width: 50%;
-    ;
-    background-color: transparent;
-    border: 5px solid #c2c5aa;
-
-}
-
-.loading-bar-fill {
-    margin: 5px 5px;
-    height: 80%;
-    width: 100%;
-    background-color: #c2c5aa;
+    flex-direction: column;
+    height: 100%;
 }
 
 .loading-text {
-    color: #c2c5aa;
-    font-size: 50px;
-    font-family: Arial;
-    font-weight: bolder;
-    height: 50%;
-    width: 100%;
+    color: rgba(147, 146, 139, 1);
+    font-family: 'Fixed', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    flex: 1;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-text-1 {
+    font-size: 300%;
+    font-weight: 900;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+.loading-text-2 {
+    align-self: center;
+    font-size: 400%;
+}
+
+.loading-text-3 {
+    font-size: 150%;
+}
+
+.error {
+    font-size: 200%;
+    color: rgba(188, 96, 96, 1);
+    text-shadow: 0.5px 0.5px #371616, -0.5px -0.5px #371616, 0.5px -0.5px #371616, -0.5px 0.5px #371616;
 }
