@@ -18,6 +18,7 @@ MonoBehaviour:
   outlineFade: 1.826
   cellsAmount: 3
   cellFade: 0.3
+  minLightIntensity: 0.4
   specularColor: {r: 1, g: 0.97112316, b: 0.740566, a: 1}
   shadowStart: -1
   shadowEnd: 1

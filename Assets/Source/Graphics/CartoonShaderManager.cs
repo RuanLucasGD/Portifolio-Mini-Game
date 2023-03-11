@@ -15,6 +15,7 @@ public class CartoonShaderManager : ScriptableObject
     [Header("Shading")]
     [Min(1)] public float cellsAmount;
     [Range(0, 1)] public float cellFade;
+    [Range(0, 1)] public float minLightIntensity;
     public Color specularColor;
     public float shadowStart;
     public float shadowEnd;
@@ -30,6 +31,7 @@ public class CartoonShaderManager : ScriptableObject
 
         // default shading
         cellsAmount = 2;
+        minLightIntensity = 0.3f;
         specularColor = Color.white;
         shadowColor = Color.grey;
     }
@@ -37,7 +39,7 @@ public class CartoonShaderManager : ScriptableObject
     private void OnEnable()
     {
         UpdateAllShaders();
-      
+
     }
 
     private void OnValidate()
@@ -57,8 +59,10 @@ public class CartoonShaderManager : ScriptableObject
         Shader.SetGlobalFloat("_Cartoon_Cells", cellsAmount);
         Shader.SetGlobalFloat("_Shadow_Cell_Fade", cellFade);
         Shader.SetGlobalFloat("_Shadow_Start", shadowStart);
+        Shader.SetGlobalFloat("_Min_Light_Intensity", minLightIntensity);
         Shader.SetGlobalFloat("_Shadow_End", shadowEnd);
         Shader.SetGlobalColor("_Cartoon_Specular_Color", specularColor);
         Shader.SetGlobalColor("_Shadow_Color", shadowColor);
+
     }
 }
