@@ -9,9 +9,19 @@ mergeInto(LibraryManager.library, {
             if (document.fullscreenElement !== null) {
                 window.document.exitFullscreen();
             }
-
-            url = UTF8ToString(url);
-            window.open(url, '_blank');
         }
+
+        url = UTF8ToString(url);
+        window.open(url, '_blank');
+    },
+    OpenEmail: function () {
+
+        if (window.navigator) {
+            if (document.fullscreenElement !== null) {
+                window.document.exitFullscreen();
+            }
+        }
+
+        window.location.href = "mailto:ruanlucaspgbr@outlook.com"
     }
 });
