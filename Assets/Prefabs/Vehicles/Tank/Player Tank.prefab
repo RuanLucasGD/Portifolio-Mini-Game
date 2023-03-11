@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2882092153151471043, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
       propertyPath: m_Name
-      value: Player Tank Variant
+      value: Player Tank
       objectReference: {fileID: 0}
     - target: {fileID: 2882092153151471043, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
       propertyPath: m_TagString
@@ -101,14 +101,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5, y: 0.2, z: 10}
   m_Center: {x: 0, y: 1, z: 0}
---- !u!81 &2974398377561563748
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1876555697392853801}
-  m_Enabled: 1
 --- !u!114 &33626720
 MonoBehaviour:
   m_ObjectHideFlags: 0

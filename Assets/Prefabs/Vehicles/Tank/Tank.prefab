@@ -2971,8 +2971,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.7264151, g: 0.6117975, b: 0.33922213, a: 0.5529412}
-        key1: {r: 0.7264151, g: 0.6117975, b: 0.33922213, a: 0.5294118}
+        key0: {r: 0.6901961, g: 0.6431373, b: 0.4392157, a: 0.5529412}
+        key1: {r: 0.6901961, g: 0.6431373, b: 0.4392157, a: 0.5294118}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -8005,9 +8005,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 100
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -8015,7 +8015,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.40257263
       value: 1
       inSlope: 0
       outSlope: 0
@@ -8039,8 +8039,8 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
+      time: 0.40257263
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -8069,7 +8069,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.40257263
       value: 1
       inSlope: 0
       outSlope: 0
