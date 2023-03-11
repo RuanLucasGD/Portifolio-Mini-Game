@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 3420391694686032190}
   - component: {fileID: 8287798173474661711}
   - component: {fileID: 8287798173474661708}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Email
   m_TagString: Panels
   m_Icon: {fileID: 0}
@@ -152,9 +152,9 @@ MonoBehaviour:
   onSelect:
     m_PersistentCalls:
       m_Calls: []
-  onInteractWithPlayer:
+  onPress:
     m_PersistentCalls:
       m_Calls: []
-  onInteractWithoutPlayer:
+  onInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
