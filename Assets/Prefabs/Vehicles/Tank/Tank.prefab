@@ -619,7 +619,7 @@ MonoBehaviour:
     engineSound:
       audioPlayer: {fileID: 7761271627074939387}
       engineSound: {fileID: 8300000, guid: 484dc82a5f65cac4dbfbddb8425f0b1b, type: 3}
-      basePitch: 0.1
+      basePitch: 0
       maxPitch: 1.1
     decelerationByAngle: 20000
     angleDecelerationByAngleCurve:

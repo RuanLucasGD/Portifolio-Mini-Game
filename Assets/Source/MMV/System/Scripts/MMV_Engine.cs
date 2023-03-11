@@ -122,7 +122,7 @@ namespace MMV
         /// <summary>
         /// Minimum pitch that the engine sound can have
         /// </summary>
-        public const float MIN_SOUND_PITCH = 0.1f;
+        public const float MIN_SOUND_PITCH = 0.0f;
 
         /// <summary>
         /// Maximum pitch that the engine sound can have
