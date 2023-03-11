@@ -40,13 +40,13 @@ namespace Game.Mecanics
             resetDragDelay = 1;
         }
 
-        void Start()
+        private void Start()
         {
             UpdateCameraPosition();
             UpdateCameraRotation();
         }
 
-        void Update()
+        private void Update()
         {
             UpdateMouseDrag();
             UpdateCameraPosition();

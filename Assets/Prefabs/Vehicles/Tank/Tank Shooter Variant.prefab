@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &978720223654291445
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2882092153151471043, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
+      propertyPath: m_Name
+      value: Tank Shooter Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221462586612049785, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221462586612049785, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -83.21096
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221462586612049785, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0000019073486
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221462586612049785, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -83.83876
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221462586612049785, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221462586612049785, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221462586612049785, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221462586612049785, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221462586612049785, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221462586612049785, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221462586612049785, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
+--- !u!1 &3056294126714559030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2882092153151471043, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
+  m_PrefabInstance: {fileID: 978720223654291445}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2786402712951342379 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3116022938944529118, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
+  m_PrefabInstance: {fileID: 978720223654291445}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056294126714559030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b203a0c25b02ee4fbfef35fb9bfae15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1711738596335944205 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1897227055671125496, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
+  m_PrefabInstance: {fileID: 978720223654291445}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b40cee5d20495645af258d2a76a4819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1205060213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056294126714559030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25d50e79b9e1ad45b2570cab6897bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 1711738596335944205}
+  vehicle: {fileID: 2786402712951342379}
+  shotInterval: 5
+  target: {fileID: 0}
