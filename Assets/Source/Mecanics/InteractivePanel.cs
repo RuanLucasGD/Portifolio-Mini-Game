@@ -23,6 +23,7 @@ namespace Game.Mecanics
         public UnityEvent<InteractivePanel> onSelect;
         public UnityEvent<InteractivePanel> onPress;
         public UnityEvent<InteractivePanel> onInteractionCompleted;
+        public UnityEvent onRecreate;
 
         private MeshRenderer meshRenderer;
         private MaterialPropertyBlock materialProperties;
@@ -117,6 +118,7 @@ namespace Game.Mecanics
         {
             yield return new WaitForSeconds(recreateAfterTime);
             gameObject.SetActive(true);
+            onRecreate.Invoke();
         }
     }
 }

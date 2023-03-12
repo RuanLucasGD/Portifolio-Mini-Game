@@ -6,12 +6,17 @@ using Game.Utils;
 
 namespace Game.Mecanics
 {
-    public class PlayerTurretController : MonoBehaviour
+    public class PlayerController : MonoBehaviour
     {
         [Tooltip("Tag of panels to turret lookAt.")]
         public InteractiveTrigger interactiveTrigger;
         public MMV.MMV_ShooterManager vehicleWeapon;
         public MMV.MMV_Vehicle vehicle;
+
+        [Header("Moviment Controls")]
+        public string Horizontal;
+        public string Vertical;
+        public KeyCode brakeKey;
 
         [Space]
         [Range(0.5f, 1)] public float shotPrecision;
@@ -27,10 +32,15 @@ namespace Game.Mecanics
 
         public Transform Target { get; set; }
 
+        public float HorizontalInput => Input.GetAxis(Horizontal);
+        public float VerticalInput => Input.GetAxis(Vertical);
+
         public bool IsOnInteractiveArea { get; private set; }
         public bool AutoSelectPanel { get; set; }
+
         public bool CanShot { get; set; }
         public bool CanVehicleMove { get; set; }
+
         public bool IsVehicleMoving => (vehicle.IsAccelerating || vehicle.IsTurning) && CanVehicleMove;
 
         public bool TargetOnView
@@ -56,7 +66,7 @@ namespace Game.Mecanics
             }
         }
 
-        public PlayerTurretController()
+        public PlayerController()
         {
             shotPrecision = 0.8f;
         }
@@ -94,6 +104,19 @@ namespace Game.Mecanics
             {
                 TurretLookAtForward();
             }
+
+            ControlVehicle();
+        }
+
+        private void ControlVehicle()
+        {
+            var _isBraking = false;
+
+            _isBraking |= Input.GetKey(brakeKey);
+            _isBraking |= HorizontalInput == 0 && VerticalInput == 0;
+            _isBraking |= !CanVehicleMove;
+
+            vehicle.PlayerInputs(VerticalInput, HorizontalInput, _isBraking);
         }
 
         private void ShootWhenInteractWithPanel()

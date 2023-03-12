@@ -9,12 +9,9 @@ namespace Game.Mecanics
     public class GameManager : MonoBehaviour
     {
         public MMV.MMV_Vehicle playerVehicle;
-        private VehicleController playerVehicleController;
-        private PlayerTurretController playerTurretController;
+        private PlayerController playerTurretController;
 
         private InteractivePanel selectedInteractiveObject;
-
-        private UrlLink[] links;
 
         private static GameManager instance;
 
@@ -47,28 +44,19 @@ namespace Game.Mecanics
                 return;
             }
 
-            playerTurretController = playerVehicle.GetComponent<PlayerTurretController>();
-            playerVehicleController = playerVehicle.GetComponent<VehicleController>();
+            playerTurretController = playerVehicle.GetComponent<PlayerController>();
 
             if (!playerTurretController)
             {
-                Debug.LogError($"Add a {typeof(PlayerTurretController).Name} component on player vehicle");
+                Debug.LogError($"Add a {typeof(PlayerController).Name} component on player vehicle");
             }
 
-            if (!playerVehicleController)
-            {
-                Debug.LogError($"Add a {typeof(VehicleController).Name} component on player vehicle");
-            }
-
-            links = FindObjectsOfType<UrlLink>();
             Interactables = FindObjectsOfType<InteractivePanel>();
-
-
         }
 
         private void Start()
         {
-            if (!playerVehicle || !playerTurretController || !playerVehicleController)
+            if (!playerVehicle || !playerTurretController)
             {
                 return;
             }
@@ -80,11 +68,7 @@ namespace Game.Mecanics
             foreach (var i in Interactables)
             {
                 i.onPress.AddListener(OnPressPanel);
-            }
-
-            foreach (var l in links)
-            {
-                l.onOpen.AddListener(DisableShot);
+                i.onRecreate.AddListener(DisableShot);
             }
         }
 

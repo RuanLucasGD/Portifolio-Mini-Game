@@ -116,6 +116,9 @@ MonoBehaviour:
   interactiveTrigger: {fileID: 33626721}
   vehicleWeapon: {fileID: 2855756093820713746}
   vehicle: {fileID: 1642605120424213556}
+  Horizontal: Horizontal
+  Vertical: Vertical
+  brakeKey: 32
   shotPrecision: 0.99
   aimObstacles:
     serializedVersion: 2
@@ -143,19 +146,3 @@ MonoBehaviour:
   onExit:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7949863665608054524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1876555697392853801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4743fa17da236174f81e6136ac128e42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Inputs:
-    Horizontal: Horizontal
-    Vertical: Vertical
-    brakeKey: 32
