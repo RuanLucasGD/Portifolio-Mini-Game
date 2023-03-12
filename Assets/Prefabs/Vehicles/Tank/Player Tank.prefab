@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1897227055671125496, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
+      propertyPath: weapon.projectile
+      value: 
+      objectReference: {fileID: 4545572983061310331, guid: 3d1c9213327486d40bcb1b6e79eb9f96, type: 3}
     - target: {fileID: 2882092153151471043, guid: 8c8408c364458ff4fbd64df1057f97a3, type: 3}
       propertyPath: m_Name
       value: Player Tank

@@ -51,11 +51,15 @@ MonoBehaviour:
   onHit:
     m_PersistentCalls:
       m_Calls: []
+  onDestrotyed:
+    m_PersistentCalls:
+      m_Calls: []
   spawnOnHit:
   - name: Explosion
     prefabs:
     - {fileID: 2777375486742993447, guid: d3f8f3359937d1c46b3a5af60faf1d8a, type: 3}
     - {fileID: 5366842782687240752, guid: e50d4c556ff41a34f8be39d23ce9d36d, type: 3}
+    - {fileID: 6753424881496528623, guid: 4902f4f9093f10f498ddd8df13947d29, type: 3}
     lifeTime: 10
   addExplosionForce: 0
   explosionInteractionLayer:
@@ -104,7 +108,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 1
+  m_Time: 0.1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.25
