@@ -63,7 +63,7 @@ namespace Game.Mecanics
             links = FindObjectsOfType<UrlLink>();
             Interactables = FindObjectsOfType<InteractivePanel>();
 
-            
+
         }
 
         private void Start()
@@ -136,11 +136,18 @@ namespace Game.Mecanics
         {
             foreach (var i in Interactables)
             {
-                if (i is InteractivePanel)
+                if (interactive)
                 {
-                    i.IsSelected = i.gameObject == interactive.gameObject;
+                    if (i is InteractivePanel)
+                    {
+                        i.IsSelected = i.gameObject == interactive.gameObject;
+                    }
                 }
-            }            
+                else    // no interactable selected
+                {
+                    i.IsSelected = false;
+                }
+            }
         }
     }
 }
