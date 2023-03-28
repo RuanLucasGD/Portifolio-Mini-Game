@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1270139118
+--- !u!1 &311317182
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,29 +8,29 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1270139119}
+  - component: {fileID: 311317183}
   m_Layer: 0
   m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!4 &1270139119
+--- !u!4 &311317183
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270139118}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 3.06, z: 0}
+  m_GameObject: {fileID: 311317182}
+  m_LocalRotation: {x: -0, y: -3.7493994e-33, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2268586486872676073}
+  m_Father: {fileID: 1951810491785671057}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8287798173474661710
+--- !u!1 &3138241528467094967
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -38,48 +38,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2268586486872676073}
-  - component: {fileID: 4554851056507942153}
-  - component: {fileID: 3420391694686032190}
-  - component: {fileID: 8287798173474661711}
-  - component: {fileID: 8287798173474661708}
+  - component: {fileID: 1951810491785671057}
+  - component: {fileID: 8186525170625794639}
+  - component: {fileID: 5064725739120311171}
+  - component: {fileID: 3138241528467094964}
+  - component: {fileID: 3138241528467094965}
+  - component: {fileID: 6598067220809264858}
   m_Layer: 10
-  m_Name: Email
+  m_Name: Linkedin
   m_TagString: Panels
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!4 &2268586486872676073
+--- !u!4 &1951810491785671057
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8287798173474661710}
+  m_GameObject: {fileID: 3138241528467094967}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1270139119}
+  - {fileID: 311317183}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
---- !u!33 &4554851056507942153
+--- !u!33 &8186525170625794639
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8287798173474661710}
-  m_Mesh: {fileID: -1288795045297212911, guid: 94b836f1f14affa408763f18dbe1c90d, type: 3}
---- !u!23 &3420391694686032190
+  m_GameObject: {fileID: 3138241528467094967}
+  m_Mesh: {fileID: 4413279790853888302, guid: 94b836f1f14affa408763f18dbe1c90d, type: 3}
+--- !u!23 &5064725739120311171
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8287798173474661710}
+  m_GameObject: {fileID: 3138241528467094967}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 1
@@ -114,26 +115,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8287798173474661711
+--- !u!65 &3138241528467094964
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8287798173474661710}
+  m_GameObject: {fileID: 3138241528467094967}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.832828, y: 5.725299, z: 0.70215046}
-  m_Center: {x: -5.308228e-10, y: 2.8395948, z: -0.009317473}
---- !u!114 &8287798173474661708
+  m_Size: {x: 6.0253196, y: 5.7707562, z: 0.76725006}
+  m_Center: {x: -0.0351119, y: 2.8887684, z: 0.025633901}
+--- !u!114 &3138241528467094965
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8287798173474661710}
+  m_GameObject: {fileID: 3138241528467094967}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c0cfcdc9c51ae445800cfe3f1e10fb8, type: 3}
@@ -143,8 +144,8 @@ MonoBehaviour:
   selectedColorIntensity: 2
   overColorIntensity: 5
   pressedColorIntensity: 10
-  spawnOnDestroy: {fileID: 0}
-  center: {fileID: 1270139119}
+  spawnOnDestroy: {fileID: 7482843323781722383, guid: 021c1d9b4ca0463499d5a1c0df6e6de1, type: 3}
+  center: {fileID: 311317183}
   recreateAfterTime: 5
   onOver:
     m_PersistentCalls:
@@ -156,5 +157,37 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onInteractionCompleted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6598067220809264858}
+        m_TargetAssemblyTypeName: Game.Utils.UrlLink, Game.Utils
+        m_MethodName: OpenLinkDelayed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onRecreate:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6598067220809264858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3138241528467094967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bac542197f892419d0248dfc4239f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  link: https://www.linkedin.com/in/ruan-lucas/
+  delay: 0.1
+  onOpen:
     m_PersistentCalls:
       m_Calls: []
