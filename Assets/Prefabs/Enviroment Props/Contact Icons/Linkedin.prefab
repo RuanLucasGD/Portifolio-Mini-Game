@@ -141,8 +141,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorTransitionSpeed: 10
-  selectedColorIntensity: 2
-  overColorIntensity: 5
+  selectedColorIntensity: 1
+  overColorIntensity: 3
   pressedColorIntensity: 10
   spawnOnDestroy: {fileID: 7482843323781722383, guid: 021c1d9b4ca0463499d5a1c0df6e6de1, type: 3}
   center: {fileID: 311317183}

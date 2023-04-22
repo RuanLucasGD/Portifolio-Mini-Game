@@ -45,10 +45,10 @@ namespace Game.Mecanics
         protected override void Update()
         {
             base.Update();
-            UpdateMaterialColor();
+            DecreaseColorIntensity();
         }
 
-        private void UpdateMaterialColor()
+        private void DecreaseColorIntensity()
         {
             if (!meshRenderer || currentIntensity < 0.01f)
             {
@@ -61,7 +61,12 @@ namespace Game.Mecanics
                 meshRenderer.SetPropertyBlock(materialProperties);
             }
 
-            if (!IsPressing && !IsOver && !IsSelected)
+            var _targetIntensity = 0f;
+            if (IsSelected) _targetIntensity = selectedColorIntensity;
+            if (IsOver) _targetIntensity = overColorIntensity;
+            if (IsPressing) _targetIntensity = pressedColorIntensity;
+
+            if (currentIntensity > _targetIntensity)
             {
                 var _decreaseSpeed = Mathf.Min(currentIntensity * Time.deltaTime * colorTransitionSpeed, currentIntensity);
                 currentIntensity -= _decreaseSpeed;
